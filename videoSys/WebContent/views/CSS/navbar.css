@@ -1,0 +1,37 @@
+.logo-text{
+    color: white !important;
+    font-size: 30px !important;
+    font-family: 'Gamja Flower', cursive !important;
+}
+.navbar {
+    background-color: rgba(33, 33, 37, 0.9) !important;
+}
+
+.navbar li a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.navbar li a:hover {
+    color: #ffc451 !important;
+}
+
+.search-container {
+    margin-left: 300px;
+    width: 500px;
+    display: flex;
+    float: right;
+}
+
+.search-container input {
+    width: 350px;
+}
+
+.search-container button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none !important;
+}
+
