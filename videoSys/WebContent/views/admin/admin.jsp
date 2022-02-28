@@ -1,3 +1,6 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +11,14 @@
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
     
-<link rel="stylesheet" href="assets/vendors/iconly/bold.css">
-
-    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <LINK REL="stylesheet" HREF="<c:url value='/views/admin/assets/css/bootstrap.css'/>" TYPE="text/css">
+    <LINK REL="stylesheet" HREF="<c:url value='/views/admin/assets/vendors/iconly/bold.css'/>" TYPE="text/css">
+	<LINK REL="stylesheet" HREF="<c:url value='/views/admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.css'/>" TYPE="text/css">
+	<LINK REL="stylesheet" HREF="<c:url value='/views/admin/assets/vendors/bootstrap-icons/bootstrap-icons.css'/>" TYPE="text/css">
+	<LINK REL="stylesheet" HREF="<c:url value='/views/admin/assets/css/app.css'/>" TYPE="text/css">
+	<LINK REL="shortcut icon" HREF="<c:url value='/views/admin/assets/images/favicon.svg'/>" TYPE="text/css">
+   
 </head>
 
 <body>
@@ -26,7 +29,7 @@
                     <div class="d-flex justify-content-between">
                         <div class="logo">
                             <h1 class="logo me-auto me-lg-0" style="font-size:30px">
-                                <a href="../index.html" class="logo-text">
+                                <a href="../home/index" class="logo-text">
                                     <b>VideoSys</b>
                                 </a>
                             </h1>
@@ -36,73 +39,7 @@
                     </div>
                 </div>
     </div>
-    <div class="sidebar-menu">
-        <ul class="menu">
-            <li class="sidebar-title">Menu</li>
-            
-            <li
-                class="sidebar-item active ">
-                <a href="admin.html" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Thống Kê</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-stack"></i>
-                    <span>Quản Lý Video</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Danh Sách Video</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Cập nhật Video</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Dự Phòng</a>
-                    </li>
-                </ul>
-            </li>
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                    <span>Người dùng</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Sách Người dùng</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Quản lý Người dùng</a>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-pentagon-fill"></i>
-                    <span>Quản lý yêu thích</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Yêu Thích</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Người Yêu Thích</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="video_list.html">Người Chia Sẻ</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <%@include file="../../common/dashBoard.jsp" %> 
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
 </div>
         </div>
@@ -392,13 +329,14 @@
             </footer>
         </div>
     </div>
-    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<c:url value='/views/admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' />"></script>
+    <script src="<c:url value='/views/admin/assets/js/bootstrap.bundle.min.js' />"></script>
+    <script src="<c:url value='/views/admin/assets/vendors/apexcharts/apexcharts.js' />"></script>
+    <script src="<c:url value='/views/admin/assets/js/pages/dashboard.js' />"></script>
+    <script src="<c:url value='/views/admin/assets/js/mazer.js' />"></script>
     
-    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-    <script src="assets/js/pages/dashboard.js"></script>
 
-    <script src="assets/js/mazer.js"></script>
+    
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +15,9 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/login.css">
-    <link rel="stylesheet" href="CSS/navbar.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <title>Register</title>
+    <LINK REL="stylesheet" HREF="<c:url value='/views/CSS/login.css'/>" TYPE="text/css">
+    <LINK REL="stylesheet" HERF="<c:url value='/views/CSS/navbar.css'/>" TYPE="text/css">
+    <title>Login</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -45,46 +47,38 @@
                         <a href="index.html" class="nav-link">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a href="register.html" class="nav-link">Đăng Ký</a>
+                        <a href="register.html" class="nav-link">Đăng Nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.html" class="nav-link">Đăng Nhập</a>
+                        <a href="login.html" class="nav-link">Đăng Ký</a>
                     </li>
                     <li class="nav-item">
-                        <a href="admin/admin.html" class="nav-link">Quản lý</a>
+                        <a href="admin/admin.html" class="nav-link">Quản Lý</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div class="box">
-        <h2>Đăng ký</h2>
-        <p></p>
-        <form>
+    <div class="container">
+        <div class="box">
+            <h2>Đăng Nhập</h2>
+            <p></p>
+            <form>
             <div class="inputBox">
                 <input type="text" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
-                <label>Tên Người Dùng</label>
+                <label>Username</label>
             </div>
             <div class="inputBox">
-                <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
-                <label>Mật Khẩu</label>
-            </div>
-            <div class="inputBox">
-                <input type="text" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
-                <label>Nhập lại Mật Khẩu</label>
-            </div>
-            <div class="inputBox">
-                <input type="email" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
-                <label>Email</label>
-            </div>
+                    <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label>Password</label>
+                </div>
             <button type="submit" class="btn-submit">Xác nhận</button>
-      
-        </form>
-      </div>
+            </form>
+        </div>
+    </div>
 
     <footer>
-        <div class="container-fluid padding">
+        <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-4">
                     <h1>
@@ -105,15 +99,15 @@
                     <h2>
                         Phim Mới
                     </h2>
-                    <p>Phim lẻ</p>
-                    <p>Phim Bộ</p>
+                    <p>Phim Lẻ</p>
+                    <p>Phim Bộ</p>
                 </div>
 
                 <div class="col-md-4">
                     <br>
                     <br>
                     <h2>
-                        Email liên hệ
+                        Email liên hệ
                     </h2>
                     <p>myEmail@gmail.com</p>
                     <p>notmyEmail@gmail.com</p>

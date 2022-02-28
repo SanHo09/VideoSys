@@ -9,29 +9,52 @@
 
 .navbar li a {
     color: white !important;
-    text-decoration: none !important;
 }
 
 .navbar li a:hover {
     color: #ffc451 !important;
 }
 
-.search-container {
-    margin-left: 300px;
-    width: 500px;
-    display: flex;
-    float: right;
+.carousel-inner img {
+    width: 100%;
+    height: 800px;
 }
 
-.search-container input {
-    width: 350px;
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 15px #000;
 }
 
-.search-container button {
-    cursor: pointer;
+.carousel-caption .btn-primary {
+    background-color: rgba(102, 102, 121, 0.9);
+    border: 1px solid white;
+}
+
+.btn-primary:hover {
+    background-color: rgba(72, 72, 83, 0.9);
+    border: 1px solid white;
+}
+
+.btn-primary:active {
+    background-color: rgba(72, 72, 83, 0.9);
+    border: 1px solid white;
+}
+
+.welcome hr {
+    border-top: 2px solid rgb(62, 44, 100, 0.6);
+    width: 95%;
+    margin-bottom: 2rem;
+}
+
+.short {
+    border-top: 2px solid rgb(62, 44, 100, 0.6);
+    width: 95%;
+    margin-bottom: 2rem;
 }
 
 a {
-    text-decoration: none !important;
+	text-transform: none;
 }
 
