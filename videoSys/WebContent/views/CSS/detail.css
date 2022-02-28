@@ -44,9 +44,8 @@ footer {
 }
 
 .bg-white i:hover {
-    color: rgb(199, 17, 17);
+    color: blue;
 }
-
 
 .mt-100 {
     margin-top: 10px;
@@ -159,6 +158,10 @@ footer {
     text-decoration: none; 
 }
 
+.row .thumbnail a span:hover {
+    color: #17a8e3; !important
+    ; 
+}
 
 .row .thumbnail span {
     margin-top: 15px;
@@ -169,6 +172,12 @@ footer {
 .row .thumbnail small {
     padding-top: -10px;
     color: #606060;
+}
+
+.bg-white button {
+	outline: none;
+	border: none;
+	background-color: white;
 }
 
 
