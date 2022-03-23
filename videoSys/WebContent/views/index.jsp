@@ -135,8 +135,17 @@
         </div>
         <br>
         <div class="button-group">
-            <button class="control"><<</button>
-            <button class="control">>></button>
+            <nav aria-label="Page navigation example">
+			  <ul class="pagination">
+			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			    
+			    <c:forEach varStatus="i" begin="1" end="${maxPage}">
+			   	 	<li class="page-item ${i.index==currentPage?'active':''}"><a class="page-link" href="../home/index?page=${i.index}">${i.index}</a></li>
+			    </c:forEach>
+			    
+			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+			  </ul>
+			</nav>
         </div>
         <hr class="short">
     </div>

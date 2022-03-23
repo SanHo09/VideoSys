@@ -34,6 +34,7 @@
 		                    <input type="password" name="password" required onkeyup="this.setAttribute('value', this.value);" value="">
 		                    <label>Mật khẩu<label>
 		             </div>
+		             <a href="../account/forgotPassword">Quên mật khẩu ?</a><br>
 		             <small style="color: red">${message }</small>
 		            
 		            <button type="submit" class="btn-submit">Xác nhận</button>

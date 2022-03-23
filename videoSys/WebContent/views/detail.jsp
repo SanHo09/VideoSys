@@ -65,7 +65,7 @@
 									<div class="d-flex flex-row fs-12">
 										<c:choose>
 											<c:when test="${favorite.user.userID!=null}">
-												<form action="../video/like" method="POST">
+												<form action="../video/like" method="POST" >
 													<div class="like p-2 cursor">
 														<button type="submit">
 															<i class="fa fa-thumbs-o-up" id="like"
@@ -88,12 +88,15 @@
 											</c:otherwise>
 										</c:choose>
 										<div class="like p-2 cursor">
-											<i class="fa fa-commenting-o"><span class="ml-1">Comment</span></i>
+											<i class="fa fa-commenting-o"><span class="ml-1" onclick="getfocus()">Comment</span></i>
 										</div>
+									
 										<div class="like p-2 cursor">
-											<button type="submit" formaction="../video/share">
-												<i class="fa fa-share"><span class="ml-1">Share</span></i>
-											</button>
+											<form action="../video/share" method="POST" id="share">
+												<button onclick="shareVideo()">
+													<i class="fa fa-share"><span class="ml-1">Share</span></i>
+												</button>
+											</form>
 										</div>
 
 									</div>
@@ -102,6 +105,8 @@
 						</div>
 					</div>
 				</div>
+			
+				
 				<hr>
 				<!--commet-->
 				<c:choose>
@@ -109,9 +114,9 @@
 			    		<div class="bg-light p-2">
 							<form action="../comment/postComment?id=${video.videoID}" method="POST">
 								<div class="d-flex flex-row align-items-start">
-									<img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg"
-										width="40">
-									<textarea class="form-control ml-1 shadow-none textarea" name="content" value="${commentMessage }"></textarea>
+									<img class="rounded-circle" src="<c:url value='/views/img/${sessionScope.user.image}' />"
+										width="50" height="50">
+									<textarea class="form-control ml-1 shadow-none textarea" id="txtComment" name="content" value="${commentMessage }"></textarea>
 								</div>
 								<div class="mt-2 text-right">
 									<button class="btn btn-primary btn-sm shadow-none" type="submit">Post
@@ -140,19 +145,31 @@
 								<c:forEach items="${commentList}" var="i">
 									<div class="d-flex flex-row comment-row m-t-0">
 									<div class="p-2">
-										<img src="https://i.imgur.com/Ur43esv.jpg" alt="user"
-											width="50" class="rounded-circle">
+										<img src="<c:url value='/views/img/${i.user.image}' />" alt="user"
+											width="50" height="50" class="rounded-circle">
 									</div>
 									<div class="comment-text w-100">
 										<h6 class="font-medium">${i.user.fullName}</h6>
 										<span class="m-b-15 d-block">${i.content}</span>	
+										<form action="../comment/edit" method="POST">
 										<div class="comment-footer">
 											<span class="text-muted float-right">${i.commentDate}</span>
-											<button type="button" class="btn btn-cyan btn-sm">Edit</button>
-											<button type="button" class="btn btn-success btn-sm">Publish</button>
-											<button type="button" class="btn btn-danger btn-sm">Delete</button>
+											<c:if test="${sessionScope.user==i.user}">
+												<button type="button" class="btn btn-cyan btn-sm" onclick="edit(this);" data-id="${i.id}">Edit</button>
+												<button type="submit" class="btn btn-danger btn-sm" formaction="../comment/delete?cmtId=${i.id}&&id=${video.videoID}">Delete</button>
+												
+												<div id="${i.id}" style="display: none">
+													<input  type="text"   class="form-control" name="editContent" placeholder="Viết bình luận" aria-label="Viết bình luận" aria-describedby="basic-addon2">
+													<button type="submit" class="btn btn-info btn-sm" formaction="../comment/edit?cmtId=${i.id}&&id=${video.videoID}">Submit</button>
+													<button type="button" class="btn btn-warning btn-sm" onclick="cancel(this);" data-id="${i.id}">Cancel</button>
+												</div>
+												
+												
+											</c:if>
 										</div>
+										</form>
 									</div>
+									
 								</div>
 								</c:forEach>
 								
@@ -220,6 +237,32 @@
 			}
 
 		}
+		
+		let edit = button => {
+			var a = button.getAttribute('data-id');
+			console.log(a);
+			document.getElementById(a).style.display = "block";
+		}
+		
+		let cancel = button => {
+			var a = button.getAttribute('data-id');
+			console.log(a);
+			document.getElementById(a).style.display = "none";
+		}
+		
+		function getfocus() {
+			  document.getElementById("txtComment").focus();
+		}
+		
+		function shareVideo() {
+			let email = prompt("Nhập Email bạn muốn chia sẻ", "abc@gmail.com");
+			if (email != null) {
+				document.getElementById("share").action = "../video/share?email="+email;
+				document.getElementById("share").submit();
+			}
+		}
+
 	</script>
+	
 </body>
 </html>

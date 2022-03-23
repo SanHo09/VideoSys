@@ -71,8 +71,8 @@
 				<div class="page-title">
 					<div class="row">
 						<div class="col-12 col-md-6 order-md-1 order-last">
-							<h3>Video</h3>
-							<p class="text-subtitle text-muted">Cập nhật Video</p>
+							<h3>User</h3>
+							<p class="text-subtitle text-muted">Cập nhật User</p>
 						</div>
 						<div class="col-12 col-md-6 order-md-2 order-first">
 							<nav aria-label="breadcrumb"
@@ -91,19 +91,19 @@
 				</section>
 			</div>
 			<!-- Content here -->
-			<form action="../video/uploadFile" method="POST" enctype="multipart/form-data">
+			<form action="../account/uploadFile?status='edit'" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="videoID" value="${currentVideo.videoID}">
 			<div class="row">
 				<div class="col-3">
 					<c:choose>
 						<c:when test="${empty img.name}">
-							<img src="<c:url value='/views/img/${currentVideo.poster}' />" width="150px"height="230px"><br>
-							<input type="hidden" value="${currentVideo.poster}" name="imgName">
-							<small>${currentVideo.poster}</small>
+							<img src="<c:url value='/views/img/${currentUser.image}' />" width="230px"height="230px" style="border-radius: 230px"><br>
+							<input type="hidden" value="${currentUser.image}" name="imgName">
+							<small>${currentUser.image}</small>
 						</c:when>
 						
 						<c:otherwise>
-							<img src="<c:url value='/views/img/${img.name}' />" width="150px"height="230px"><br>
+							<img src="<c:url value='/views/img/${img.name}' />"  width="230px"height="230px" style="border-radius: 230px"><br>
 							<input type="hidden" value="${img.name}" name="imgName">
 							<small>${img.name}</small>
 						</c:otherwise>

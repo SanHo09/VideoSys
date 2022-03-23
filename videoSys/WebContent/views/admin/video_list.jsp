@@ -111,10 +111,10 @@
 						<tr>
 							<td>${item.videoID}</td>
 							<td>${item.title}</td>
-							<td>${item.poster}</td>
+							<td><img src="<c:url value='/views/img/${item.poster}' />" width="100px"height="100px"></td>
 							<td>${item.views}</td>
 							<td>${item.description}</td>
-							<td>${item.link}</td>
+							<td><a href="../video/detail?id=${item.videoID}">https://www.youtube.com/watch?v=${item.link}</a></td>
 							<td>
 								<div class="menu-nav">
 									<div class="dropdown-container" tabindex="-1">

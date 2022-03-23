@@ -32,7 +32,7 @@ public class CommentDaoImpl extends AbtractDao<Comment> implements CommentDao {
 	}
 
 	@Override
-	public Comment findById(String id) {
+	public Comment findById(int id) {
 		// TODO Auto-generated method stub
 		return super.findById(Comment.class, id);
 	}

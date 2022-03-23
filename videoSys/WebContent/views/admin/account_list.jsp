@@ -101,6 +101,7 @@
 					<tr>
 						<th>userID</th>
 						<th>Password</th>
+						<th>Image</th>
 						<th>Email</th>
 						<th>FullName</th>
 						<th>edit</th>
@@ -109,6 +110,7 @@
 						<tr>
 							<td>${item.userID}</td>
 							<td>${item.password}</td>
+							<td><img src="<c:url value='/views/img/${item.image}' />" width="100px"height="100px"></td>
 							<td>${item.email}</td>
 							<td>${item.fullName}</td>
 							<td>

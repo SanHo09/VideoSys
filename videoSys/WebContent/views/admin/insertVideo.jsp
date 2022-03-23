@@ -91,7 +91,7 @@
 				</section>
 			</div>
 			<!-- Content here -->
-			<form action="../video/uploadFile" method="POST" enctype="multipart/form-data">
+			<form action="../video/uploadFile?status='insert'" method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-3">
 					<c:choose>
@@ -121,7 +121,7 @@
 					<br> <span>Link: </span><input type="text" name="txtLink" required="required"
 						class="videoInput" style="width: 100%"><br>
 					<br>
-					<button formaction="../account/insert" class="btnUpdate">Create</button>
+					<button type="submit" formaction="../video/insert" class="btnUpdate">Create</button>
 
 				</div>
 			</div>

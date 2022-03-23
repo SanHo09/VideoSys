@@ -1,6 +1,9 @@
 package Service.impl;
 
+import java.util.EmptyStackException;
 import java.util.List;
+
+import org.junit.internal.runners.InitializationError;
 
 import DAO.VideoDao;
 import DAO.impl.VideoDaoImpl;
@@ -40,6 +43,11 @@ public class VideoServiceImpl implements VideoService {
 		video.setVideoID(generationID());
 		video.setActive(Boolean.TRUE);
 		video.setViews(0);
+		if(video.getTitle().equals("")) {
+			throw new EmptyStackException();
+		} else if(video.getLink().equals("")) {
+			throw new EmptyStackException();
+		}
 		return dao.create(video);
 	}
 	
@@ -50,8 +58,8 @@ public class VideoServiceImpl implements VideoService {
 	}
 	
 	@Override
-	public Video delete(String link) {
-		Video video = dao.findByLink(link);
+	public Video delete(String id) {
+		Video video = dao.findById(id);
 		video.setActive(false);
 		return dao.update(video);
 	}

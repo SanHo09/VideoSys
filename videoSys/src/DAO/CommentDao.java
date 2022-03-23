@@ -7,7 +7,7 @@ import models.Favorite;
 import models.User;
 
 public interface CommentDao {
-	public Comment findById(String id);
+	public Comment findById(int id);
 	public List<Comment> findByUserID(String userID);
 	public List<Comment> findByVideoID(String videoID);
 	public Comment findByUserIdAndVideoId(String userID, String videoID);

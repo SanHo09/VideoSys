@@ -16,6 +16,8 @@ public class User {
 	private String email;
 	@Column(name="Fullname")
 	private String fullName;
+	@Column(name="images")
+	private String image;
 	@Column(name="Active")
 	private Boolean active=true;
 	
@@ -73,6 +75,14 @@ public class User {
 
 	public void setShares(List<Share> shares) {
 		this.shares = shares;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+	
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	public Boolean getActive() {

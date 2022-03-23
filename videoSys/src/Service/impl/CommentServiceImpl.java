@@ -48,6 +48,7 @@ public class CommentServiceImpl implements CommentService {
 
 	@Override
 	public Comment update(Comment comment) {
+		comment.setCommentDate(new Date());
 		return dao.update(comment);
 	}
 
@@ -57,7 +58,7 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public Comment findByID(String id) {
+	public Comment findByID(int id) {
 		return dao.findById(id);
 	}
 

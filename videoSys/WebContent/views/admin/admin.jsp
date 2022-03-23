@@ -51,7 +51,7 @@
             </header>
             
 <div class="page-heading">
-    <h3>Profile Statistics</h3>
+    <h3>Thống kê</h3>
 </div>
 <div class="page-content">
     <section class="row">
@@ -67,8 +67,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                    <h6 class="text-muted font-semibold">Tổng lượt xem</h6>
+                                    <h6 class="font-extrabold mb-0">986</h6>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +84,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
-                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                    <h6 class="text-muted font-semibold">Số lượng người dùng</h6>
+                                    <h6 class="font-extrabold mb-0">18</h6>
                                 </div>
                             </div>
                         </div>
@@ -101,8 +101,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Following</h6>
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                    <h6 class="text-muted font-semibold">Số video được chia sẻ</h6>
+                                    <h6 class="font-extrabold mb-0">20</h6>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +118,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
-                                    <h6 class="font-extrabold mb-0">112</h6>
+                                    <h6 class="text-muted font-semibold">Bình luận trong tháng</h6>
+                                    <h6 class="font-extrabold mb-0">12</h6>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4>Lượt xem qua các tháng</h4>
                         </div>
                         <div class="card-body">
                             <div id="chart-profile-visit"></div>
@@ -256,48 +256,33 @@
             <div class="card">
                 <div class="card-body py-4 px-5">
                     <div class="d-flex align-items-center">
-                        <div class="avatar avatar-xl">
-                            <img src="assets/images/faces/1.jpg" alt="Face 1">
-                        </div>
+                      
                         <div class="ms-3 name">
-                            <h5 class="font-bold">John Duck</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            <h5 class="font-bold">${sessionScope.admin.fullName}</h5>
+                            <h6 class="text-muted mb-0">@${sessionScope.admin.adminID}</h6>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Recent Messages</h4>
+                    <h4>Danh Sách Admin</h4>
                 </div>
-                <div class="card-content pb-4">
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="assets/images/faces/4.jpg">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Hank Schrader</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="assets/images/faces/5.jpg">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Dean Winchester</h5>
-                            <h6 class="text-muted mb-0">@imdean</h6>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="assets/images/faces/1.jpg">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">John Dodol</h5>
-                            <h6 class="text-muted mb-0">@dodoljohn</h6>
-                        </div>
-                    </div>
+                 <div class="card-content pb-4">
+                <c:forEach items="${adminList}" var="i">
+                	<c:if test="${sessionScope.admin.adminID!=i.adminID}">
+	                	 <div class="recent-message d-flex px-4 py-3">
+	                        
+	                        <div class="name ms-4">
+	                            <h5 class="mb-1">${i.fullName}</h5>
+	                            <h6 class="text-muted mb-0">@${i.adminID}</h6>
+	                        </div>
+	                    </div>
+                    </c:if>
+                </c:forEach>
+               
+                   
+                    
                     <div class="px-4">
                         <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
                             Conversation</button>

@@ -23,6 +23,10 @@ public class AbtractDao<T> {
 		return em.find(clazz, id);
 	}
 	
+	public T findById(Class<T> clazz, int id) {
+		return em.find(clazz, id);
+	}
+	
 	public List<T> findAll(Class<T> clazz, Boolean existIsActive) {
 		String entityName = clazz.getSimpleName();
 		StringBuilder jpql = new StringBuilder();
@@ -33,13 +37,13 @@ public class AbtractDao<T> {
 		TypedQuery<T> query = em.createQuery(jpql.toString(), clazz);
 		return query.getResultList();
 	}
-	
+
 	public List<T> findALL(Class<T> clazz, boolean existIsActive, int pageNumber, int pageSize) {	
 		String entityName = clazz.getSimpleName();
 		StringBuilder jpql = new StringBuilder();
-		jpql.append("SELECT o FROM").append(entityName).append(" o");
-		if(existIsActive==true) {
-			jpql.append("WHERE o.active = 1");
+		jpql.append("SELECT o FROM ").append(entityName).append(" o");
+		if(existIsActive==true) { 
+			jpql.append(" WHERE o.active = 1");
 		}
 		TypedQuery<T> query = em.createQuery(jpql.toString(), clazz);
 		query.setFirstResult((pageNumber-1)*pageSize);

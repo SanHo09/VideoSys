@@ -50,8 +50,7 @@ public class UserDaoImpl extends AbtractDao<User> implements UserDao {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return "US01";
-		}
-			
+		}	
 	}
 	
 

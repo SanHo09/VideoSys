@@ -91,17 +91,17 @@
 				</section>
 			</div>
 			<!-- Content here -->
-			<form action="../account/uploadFile" method="POST" enctype="multipart/form-data">
+			<form action="../account/uploadFile?status='insert'" method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-3">
 					<c:choose>
 						<c:when test="${empty img.name}">
-							<img src="<c:url value='/views/img/noImage.png'/>" width="150px"height="230px"><br>
+							<img src="<c:url value='/views/img/userProfile.jpg'/>"  width="230px"height="230px" style="border-radius: 230px"><br>
 							<input type="hidden" value="noImage.png" name="imgName">
 						</c:when>
 						
 						<c:otherwise>
-							<img src="<c:url value='/views/img/${img.name}' />" width="150px"height="230px"><br>
+							<img src="<c:url value='/views/img/${img.name}' />" width="230px"height="230px" style="border-radius: 230px"><br>
 							<input type="hidden" value="${img.name}" name="imgName">
 						</c:otherwise>
 					</c:choose>

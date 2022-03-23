@@ -7,6 +7,15 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<dependencies>
+
+
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.5</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>

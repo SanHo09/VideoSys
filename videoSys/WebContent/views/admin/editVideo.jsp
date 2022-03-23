@@ -91,7 +91,7 @@
 				</section>
 			</div>
 			<!-- Content here -->
-			<form action="../video/uploadFile" method="POST" enctype="multipart/form-data">
+			<form action="../video/uploadFile?status='edit'" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="videoID" value="${currentVideo.videoID}">
 			<div class="row">
 				<div class="col-3">

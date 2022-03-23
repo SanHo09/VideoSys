@@ -1,16 +1,19 @@
 package Service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import DAO.ShareDao;
+import DAO.impl.ShareDaoImpl;
 import Service.ShareService;
 import models.Share;
 
 public class ShareServiceImpl implements ShareService {
 	
-	ShareService dao;
+	ShareDao dao;
 	
 	public ShareServiceImpl() {
-		dao = new ShareServiceImpl();
+		dao = new ShareDaoImpl();
 	}
 	
 	@Override
@@ -36,6 +39,7 @@ public class ShareServiceImpl implements ShareService {
 	@Override
 	public Share create(Share share) {
 		share.setShareID(generationID());
+		share.setShareDate(new Date());
 		return dao.create(share);
 	}
 

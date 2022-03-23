@@ -40,23 +40,6 @@
             </li>
             
             
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-pentagon-fill"></i>
-                    <span>Quản lý Yêu thích</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="">Yêu thích</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="">Người Yêu Thích</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="">Người chia sẻ</a>
-                    </li>
-                </ul>
-            </li>
+            
         </ul>
     </div>

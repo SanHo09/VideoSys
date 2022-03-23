@@ -107,7 +107,8 @@ a {
 }
 
 .button-group {
-    padding-left:50%;
+    display: flex;
+    justify-content: center;
 }
 
 .control {

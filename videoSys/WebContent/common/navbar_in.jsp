@@ -33,7 +33,7 @@
 						<li><a href="../account/admin" class="nav-link">Quản lý</a></li>
 					</c:when>
 					<c:otherwise>
-						
+						<li class="nav-item active"><a href="../user/edit?id=${sessionScope.user.userID}"class="nav-link">Tài Khoản</a></li>
 					</c:otherwise>
 				</c:choose>
 

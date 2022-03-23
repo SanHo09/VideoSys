@@ -13,5 +13,5 @@ public interface CommentService {
 	public Comment create(User user, Video video, String content);
 	public Comment update(Comment comment);
 	public Comment delete(Comment comment);
-	public Comment findByID(String id);
+	public Comment findByID(int id);
 }
