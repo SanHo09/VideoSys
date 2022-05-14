@@ -124,8 +124,8 @@
 	                </a>
 	                <div class="card-body">
 	                <h5 class="card-title">${video.title}</h5>
-	                <p class="card-text">Lượt xem: ${video.views} <i class="fa fa-eye"></i></p>
-	                <a href="../video/detail?id=${video.videoID}" class="btn btn-primary">Xem Phim</a>
+	                <p class="card-text">Lượt xem:<a id="${video.videoID}views">${video.views}</a> <i class="fa fa-eye"></i></p>
+	                <a id="${video.videoID}" href="../video/detail?id=${video.videoID}" class="btn btn-primary">Xem Phim</a>
 	                <a href="../video/share?id=${video.videoID}" class="btn btn-primary" id="share">Chia sẻ</a>
 	                </div>
 	            </div>

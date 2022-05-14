@@ -112,7 +112,7 @@
 					
 					
 					<br> <br>
-					<input type="file" name="poster" onchange="this.form.submit()">
+					<input type="file" id="file" name="poster" onchange="this.form.submit()">
 						
 					
 				</div>

@@ -148,7 +148,7 @@ public class runServlet extends HttpServlet {
 		} else if(uri.contains("/account/insert")) {
 			doPostInsertAccount(req, resp);
 		} else if(uri.contains("/account/edit")) {
-			doPostEditAccount(req, resp);  
+			doPostEditAccount(req, resp);  	
 		} else if(uri.contains("/comment/postComment")) {
 			doPostComment(req, resp);
 		} else if(uri.contains("/comment/edit")) {
@@ -232,7 +232,7 @@ public class runServlet extends HttpServlet {
 		List<Video> videoList = vService.findAll();
 		req.setAttribute("userList", userList);
 		req.setAttribute("videoList", videoList);
-		req.getRequestDispatcher("/views/admin/admin.jsp").forward(req, resp);;
+		req.getRequestDispatcher("/views/admin/admin.jsp").forward(req, resp);
 	}
 	
 	protected void doGetvideoList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -341,20 +341,32 @@ public class runServlet extends HttpServlet {
 				return;
 			}
 		}
-		if(!password.equals(confirm)) {
+		if(userID.length()<6) {
+			req.setAttribute("message", "* Tài khoản phải có độ dài lớn hơn 6");
+			doGetSignup(req, resp);
+			return;
+		} else if(password.length()<6) {
+			req.setAttribute("message", "* mật khẩu phải có độ dài lớn hơn 6");
+			doGetSignup(req, resp);
+			return;
+		} if(!password.equals(confirm)) {
 			req.setAttribute("message", "* 2 mật khẩu không trùng nhau");
 			doGetSignup(req, resp);
 			return;
 		} else {
-			User user = new User();
-			user.setUserID(userID);
-			user.setFullName(fullName);
-			user.setEmail(email);
-			user.setPassword(password);
-			user.setImage("userProfile.jpg");
-			uService.create(user);
-			doGetlogin(req, resp);	
-			return;
+			try {
+				User user = new User();
+				user.setUserID(userID);
+				user.setFullName(fullName);
+				user.setEmail(email);
+				user.setPassword(password);
+				user.setImage("userProfile.jpg");
+				uService.create(user);
+				doGetlogin(req, resp);	
+				return;
+			} catch(Exception ex) {
+				
+			}
 		}		
 	}
 	
@@ -445,7 +457,11 @@ public class runServlet extends HttpServlet {
 		video.setTitle(title);
 		video.setDescription(description);
 		video.setLink(link);
-		vService.update(video);
+		try {
+			vService.update(video);
+		} catch(Exception ex)  {
+			ex.printStackTrace();
+		}
 		doGetvideoList(req, resp);
 	}
 	

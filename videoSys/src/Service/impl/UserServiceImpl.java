@@ -1,5 +1,6 @@
 package Service.impl;
 
+import java.util.EmptyStackException;
 import java.util.List;
 
 import DAO.UserDao;
@@ -24,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findByUserNameAndPassword(String userName, String password) {
+		if(userName.length()<3||password.length()<3) {
+			return null;
+		}
 		return dao.findByUserNameAndPassword(userName, password);
 	}
 

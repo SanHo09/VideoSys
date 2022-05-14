@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alert - Mazer Admin Dashboard</title>
+<title>Video List</title>
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -109,14 +109,14 @@
 					</tr>
 					<c:forEach items="${videoList}" var="item">
 						<tr>
-							<td>${item.videoID}</td>
-							<td>${item.title}</td>
-							<td><img src="<c:url value='/views/img/${item.poster}' />" width="100px"height="100px"></td>
+							<td id="${item.videoID}">${item.videoID}</td>
+							<td id="${item.title}">${item.title}</td>
+							<td><img src="<c:url value='/views/img/${item.poster}' />" id="${item.poster}" width="100px" height="100px"></td>
 							<td>${item.views}</td>
-							<td>${item.description}</td>
-							<td><a href="../video/detail?id=${item.videoID}">https://www.youtube.com/watch?v=${item.link}</a></td>
+							<td id="${item.description}">${item.description}</td>
+							<td><a id="${item.link}" href="../video/detail?id=${item.videoID}">https://www.youtube.com/watch?v=${item.link}</a></td>
 							<td>
-								<div class="menu-nav">
+								<div class="menu-nav" id="delete${item.videoID}">
 									<div class="dropdown-container" tabindex="-1">
 										<div class="three-dots"></div>
 										<div class="dropdown">
@@ -125,7 +125,7 @@
 													style="color: black"> Edit </a>
 											</button>
 											<button class="btn-edit">
-												<a href="../video/delete?videoID=${item.videoID}" onclick="if (!confirm('Bạn có chắc muốn xóa video này ?')) return false;" style="color: black" > Delete </a>
+												<a id="${item.videoID}" href="../video/delete?videoID=${item.videoID}" onclick="if (!confirm('Bạn có chắc muốn xóa video này ?')) return false;" style="color: black" > Delete </a>
 											</button>
 										</div>
 									</div>

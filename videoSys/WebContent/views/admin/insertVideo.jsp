@@ -109,7 +109,7 @@
 					<small>${img.name}</small>
 					
 					<br> <br>
-							<input type="file" name="poster" onchange="this.form.submit()">
+							<input type="file" id="file" name="poster" onchange="this.form.submit()">
 						
 					
 				</div>
@@ -121,7 +121,7 @@
 					<br> <span>Link: </span><input type="text" name="txtLink" required="required"
 						class="videoInput" style="width: 100%"><br>
 					<br>
-					<button type="submit" formaction="../video/insert" class="btnUpdate">Create</button>
+					<button type="submit" name="insertForm" formaction="../video/insert" class="btnUpdate">Create</button>
 
 				</div>
 			</div>

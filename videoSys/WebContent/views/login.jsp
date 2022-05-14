@@ -23,7 +23,7 @@
     <%@include file="../common/navbar_out.jsp" %>
         <div class="container">
         <div class="box">
-	        <form action="../account/sign-in" method="POST">
+	        <form name="form" action="../account/sign-in" method="POST">
 	            <h2>Đăng Nhập</h2>
 	            <p></p>
 		            <div class="inputBox">
@@ -35,9 +35,9 @@
 		                    <label>Mật khẩu<label>
 		             </div>
 		             <a href="../account/forgotPassword">Quên mật khẩu ?</a><br>
-		             <small style="color: red">${message }</small>
+		             <small id="message" style="color: red">${message}</small>
 		            
-		            <button type="submit" class="btn-submit">Xác nhận</button>
+		            <button type="submit" name="confirm" class="btn-submit">Xác nhận</button>
 	        		
 	        </form>
         </div>

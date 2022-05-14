@@ -58,7 +58,7 @@
 					<div class="col-12" id="left">
 						<div class="row">
 							<div class="col-4">
-								<span>${video.views} Views 25 Dec 2020</span>
+								<span id="views">${video.views} </span>Views 25 Dec 2020
 							</div>
 							<div class="col-8">
 								<div class="bg-white">
@@ -67,7 +67,7 @@
 											<c:when test="${favorite.user.userID!=null}">
 												<form action="../video/like" method="POST" >
 													<div class="like p-2 cursor">
-														<button type="submit">
+														<button type="submit" id="btnLike">
 															<i class="fa fa-thumbs-o-up" id="like"
 																onclick="setLike();" style="color: blue"><span
 																class="ml-1">Like</span></i>
@@ -78,7 +78,7 @@
 											<c:otherwise>
 												<form action="../video/like" method="POST">
 													<div class="like p-2 cursor">
-														<button type="submit">
+														<button type="submit" id="btnLike">
 															<i class="fa fa-thumbs-o-up" id="like"
 																onclick="setLike();" style="color: black"><span
 																class="ml-1">Like</span></i>
